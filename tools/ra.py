@@ -1,0 +1,72 @@
+"""Resultats d'aprenentatge i criteris d'avaluació del mòdul 5104
+(RD 183/2026, BOE-A-2026-5869). Traducció al valencià del text oficial."""
+
+RA = {
+    1: ("Reconeix la tipologia de les fonts o orígens de dades, identificant-ne les característiques i aplicacions usuals, avantatges i inconvenients.", {
+        "a": "S'ha determinat la ubicació de les fonts de dades, classificant el format en què estan emmagatzemades, la ubicació (local o núvol) i la seua distribució física.",
+        "b": "S'han classificat les fonts de dades i coneixement segons l'origen (sistemes gestors de dades, sistemes IoT, plataformes de dades en streaming, integració amb API o altres), segons la naturalesa (estructurades, no estructurades) i segons siguen formals o no formals (àudios, imatges o textos de xarxes socials).",
+        "c": "S'han identificat les característiques de les fonts de dades no estructurades, valorant-ne la diversitat organitzativa i reconeixent l'ecosistema d'Internet com a origen d'informació a partir de tecnologies de web semàntica i linked data.",
+        "d": "S'han descrit els sistemes gestors de dades SQL i NoSQL, diferenciant-ne les estructures, els models i les aplicacions actuals.",
+        "e": "S'han analitzat els formats de text estructurats per a l'intercanvi de dades, com ara fitxers plans, XML i JSON.",
+        "f": "S'han determinat el format i la utilitat de les dades procedents de sistemes SCADA aplicats en IoT.",
+        "g": "S'han descrit plataformes locals o en el núvol, monolítiques i distribuïdes, que faciliten el processament massiu de dades mitjançant paral·lelització, com ara SMP i MPP.",
+        "h": "S'han descrit procediments de maneig de dades massives i de millora dels temps de procés, com ara el processament prop de les fonts en el cas de fonts de dades distribuïdes.",
+    }),
+    2: ("Aplica les operacions d'accés, extracció i transformació de dades des de bases de dades relacionals, usant els llenguatges propis de cada sistema gestor i eines de programari.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés a cada un dels sistemes contenidors de dades, automatitzant la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació de les fonts de dades, confirmant el format en què estan emmagatzemades, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'ha accedit a les bases de dades origen executant consultes amb llenguatges d'accés i consulta relacionals (DQL), en local i en el núvol, amb instruccions ad hoc, programació embeguda en llenguatges amfitrió (host) i eines d'extracció.",
+        "d": "S'han aplicat filtres i transformacions en origen, com ara projeccions, seleccions, agregacions i ordenacions, amb DQL en local i en el núvol, embegut o no en un llenguatge amfitrió.",
+        "e": "S'han utilitzat operacions complexes de transformació com ara creuament de dades (join), subconsultes, unions, diferència i funcions d'agregació, càlcul o transformació.",
+        "f": "S'han utilitzat les funcionalitats d'un llenguatge amfitrió o d'eines gràfiques aplicant transformacions programàtiques complexes, com ara lectura i càrrega de diverses fonts i destins simultanis, càrrega en memòria o en estructures d'arbre o graf i ús de taules intermèdies.",
+        "g": "S'ha paral·lelitzat l'accés, el filtre i la transformació en els orígens de dades, en funció dels sistemes i utilitats disponibles: sistemes distribuïts, MPP o SMP.",
+    }),
+    3: ("Efectua operacions per a la creació de taules i vistes destí o intermèdies i per a la càrrega massiva d'informació en sistemes de bases de dades relacionals, usant els llenguatges propis de cada sistema gestor i eines de programari.", {
+        "a": "S'han usat llenguatges de definició de dades (DDL) per a crear estructures d'emmagatzematge, relacions i índexs en bases de dades relacionals, amb instruccions ad hoc, programació embeguda i eines gràfiques.",
+        "b": "S'han usat llenguatges de manipulació de dades (DML) per a la càrrega, l'actualització i l'esborrat de dades en bases de dades relacionals, amb instruccions ad hoc, programació embeguda i eines gràfiques.",
+        "c": "S'han descrit models de dades de les bases de dades destí en funció de l'objectiu d'ús, diferenciant bases de dades OLTP i OLAP.",
+        "d": "S'han combinat instruccions de consulta, transformació i càrrega per a fonts i destins ubicats en una mateixa base de dades.",
+        "e": "S'han usat llenguatges de control de dades (DCL), configurant rols i permisos per a garantir la confidencialitat de la informació en l'accés i la manipulació de dades.",
+        "f": "S'han usat eines de càrrega massiva de dades pròpies d'un sistema de bases de dades relacionals des de fitxers plans o altres fonts externes.",
+        "g": "S'han paral·lelitzat les operacions de càrrega, actualització i esborrat de dades, en funció dels sistemes i utilitats disponibles: sistemes distribuïts, MPP o SMP.",
+    }),
+    4: ("Efectua operacions d'accés, extracció i transformació des de bases de dades NoSQL, usant els llenguatges propis de cada sistema gestor i eines de programari.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés a cada un dels sistemes contenidors de dades per a automatitzar la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació de les fonts de dades, confirmant-ne el format, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'ha accedit a dades amb origen en bases de dades NoSQL usant els llenguatges d'accés o les API disponibles per a cada una.",
+        "d": "S'han aplicat transformacions i filtres a dades NoSQL, com ara projeccions, seleccions, agregacions i ordenacions, amb els llenguatges propis, en local i en el núvol.",
+        "e": "S'ha paral·lelitzat l'accés, el filtre i la transformació en els orígens de dades, en funció dels sistemes i utilitats disponibles: sistemes distribuïts, MPP o SMP.",
+    }),
+    5: ("Utilitza llenguatges per a la càrrega i transformació d'informació en sistemes de bases de dades NoSQL, mitjançant mètodes que executen les operacions corresponents.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés als sistemes destí de les dades per a automatitzar la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació dels destins de les dades, confirmant-ne el format, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'han usat mètodes de definició de dades per a crear estructures d'emmagatzematge en bases de dades NoSQL.",
+        "d": "S'han usat mètodes per a la càrrega, l'actualització i l'esborrat de dades en bases de dades NoSQL, ordinaris i massius.",
+        "e": "S'han usat mètodes relacionats amb la seguretat en bases de dades NoSQL, relatius a la confidencialitat de la informació.",
+        "f": "S'han paral·lelitzat les operacions de càrrega, actualització i esborrat de dades, en funció dels sistemes i utilitats disponibles: sistemes distribuïts, MPP o SMP.",
+    }),
+    6: ("Efectua operacions d'accés, extracció i transformació des de fitxers de text per a l'intercanvi de dades (fitxers plans de diversos tipus, XML i JSON) usant llenguatges de programació.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés als sistemes contenidors de dades per a automatitzar la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació de les fonts de dades, confirmant-ne el format, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'ha accedit a dades en formats de text per a l'intercanvi de dades usant mètodes de lectura d'un llenguatge de programació.",
+        "d": "S'han aplicat transformacions i filtres a dades en formats de text, com ara projeccions, seleccions, agregacions, ordenacions, unions, divisions o diferències.",
+        "e": "S'ha paral·lelitzat l'accés, el filtre i la transformació en els orígens de dades, en funció dels sistemes disponibles (distribuïts, MPP o SMP) per al maneig de grans quantitats de dades.",
+    }),
+    7: ("Utilitza llenguatges per a l'emmagatzematge d'informació en fitxers de text estructurats per a l'intercanvi de dades (fitxers plans, XML i JSON), invocant els mètodes que executen cada operació.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés als sistemes contenidors de dades per a automatitzar la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació de les fonts de dades, confirmant-ne el format, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'han usat mètodes i instruccions per a generar fitxers de text estructurats per a l'intercanvi de dades.",
+        "d": "S'han usat mètodes per a la modificació i l'esborrat de dades en fitxers de text estructurats.",
+        "e": "S'han usat mecanismes que garantisquen la confidencialitat de la informació en les dades generades.",
+        "f": "S'han paral·lelitzat les operacions de creació, modificació i esborrat de dades, en funció dels sistemes disponibles (distribuïts, MPP o SMP) per al maneig de grans quantitats de dades (big data).",
+    }),
+    8: ("Aplica les operacions d'accés, extracció i transformació de dades procedents d'altres fonts, com ara fonts de dades no estructurades, diferenciant segons el tipus de font.", {
+        "a": "S'han configurat passarel·les, connectors o eines d'accés als sistemes contenidors de dades per a automatitzar la captura d'informació i el seu procés.",
+        "b": "S'ha determinat la ubicació de les fonts de dades, confirmant-ne el format, la ubicació (local o núvol) i la distribució física i lògica.",
+        "c": "S'ha accedit a dades amb origen a Internet a partir de les ontologies descrites en metadades amb formats OWL com ara RDF.",
+        "d": "S'han aplicat filtres i transformacions en origen a dades d'Internet accedides a partir de les seues metadades, usant llenguatges com SPARQL.",
+        "e": "S'ha accedit a dades amb origen en dispositius IoT mitjançant sistemes SCADA, connectant-s'hi i consultant les dades que emmagatzemen.",
+        "f": "S'han aplicat filtres i transformacions en origen a dades de dispositius IoT mitjançant sistemes SCADA, usant llenguatges de programació i les API d'accés pròpies d'aquests sistemes.",
+        "g": "S'han paral·lelitzat les operacions d'extracció i transformació de dades, en funció dels sistemes disponibles (distribuïts, MPP o SMP) per al maneig de grans quantitats de dades (big data).",
+    }),
+}

@@ -1,0 +1,218 @@
+/* =========================================================
+   ETCL · estil propi sobre MkDocs Material
+   Paleta clara, animacions suaus i respecte a reduced-motion
+   ========================================================= */
+
+:root {
+  --etcl-1: #0f766e;   /* teal  */
+  --etcl-2: #4f46e5;   /* indigo */
+  --etcl-3: #f59e0b;   /* amber  */
+  --etcl-4: #db2777;   /* rosa   */
+  --etcl-soft: #f0fdfa;
+  --etcl-radius: 14px;
+  --etcl-shadow: 0 1px 2px rgba(15, 23, 42, .06), 0 8px 24px rgba(15, 23, 42, .06);
+  --etcl-shadow-hover: 0 2px 4px rgba(15, 23, 42, .08), 0 16px 40px rgba(15, 23, 42, .12);
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #0f766e;
+  --md-primary-fg-color--light: #14b8a6;
+  --md-primary-fg-color--dark: #115e59;
+  --md-primary-bg-color: #ffffff;
+}
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #4f46e5;
+  --md-accent-fg-color--transparent: rgba(79, 70, 229, .1);
+}
+[data-md-color-scheme="slate"] {
+  --etcl-soft: rgba(20, 184, 166, .08);
+  --etcl-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  --etcl-shadow-hover: 0 2px 4px rgba(0, 0, 0, .35), 0 16px 40px rgba(0, 0, 0, .35);
+}
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #115e59;
+}
+
+/* Capçalera amb degradat animat */
+.md-header, .md-tabs {
+  background: linear-gradient(110deg, #0f766e, #0e7490 45%, #4f46e5);
+  background-size: 200% 200%;
+  animation: etcl-gradient 18s ease infinite;
+}
+
+@keyframes etcl-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* ---------- Entrada de contingut ---------- */
+.md-content__inner > * {
+  animation: etcl-fade-up .55s cubic-bezier(.2, .7, .2, 1) both;
+}
+.md-content__inner > *:nth-child(2) { animation-delay: .04s; }
+.md-content__inner > *:nth-child(3) { animation-delay: .08s; }
+.md-content__inner > *:nth-child(4) { animation-delay: .12s; }
+.md-content__inner > *:nth-child(n+5) { animation-delay: .16s; }
+
+@keyframes etcl-fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.md-typeset h1 { color: var(--md-default-fg-color); font-weight: 700; letter-spacing: -.01em; margin-bottom: .8em; }
+
+/* Revelat en fer scroll (JS afig .is-visible) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Hero de la portada ---------- */
+.etcl-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 3.2rem 2.4rem 2.6rem;
+  margin: .5rem 0 2rem;
+  background: var(--etcl-soft);
+  isolation: isolate;
+}
+.etcl-hero h1 {
+  font-weight: 800;
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin: 0 0 .8rem;
+  letter-spacing: -.02em;
+  background: linear-gradient(90deg, var(--etcl-1), var(--etcl-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.etcl-hero p { font-size: 1.05rem; max-width: 38rem; margin: 0 0 1.4rem; }
+.etcl-hero .md-button { margin: .25rem .4rem .25rem 0; border-radius: 999px; transition: transform .2s ease, box-shadow .2s ease; }
+.etcl-hero .md-button:hover { transform: translateY(-2px); box-shadow: var(--etcl-shadow-hover); }
+.etcl-blob {
+  position: absolute; z-index: -1; border-radius: 50%; filter: blur(40px); opacity: .55;
+  animation: etcl-float 14s ease-in-out infinite;
+}
+.etcl-blob.b1 { width: 260px; height: 260px; background: #5eead4; top: -70px; right: -40px; }
+.etcl-blob.b2 { width: 220px; height: 220px; background: #a5b4fc; bottom: -90px; right: 22%; animation-delay: -4s; }
+.etcl-blob.b3 { width: 160px; height: 160px; background: #fcd34d; top: 30%; right: 8%; animation-delay: -8s; opacity: .35; }
+@keyframes etcl-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-24px, 18px) scale(1.07); }
+  66%      { transform: translate(16px, -14px) scale(.95); }
+}
+
+/* Pipeline animat de la portada (E → T → C) */
+.etcl-pipeline { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin: 1.2rem 0 0; }
+.etcl-pipeline > p { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin: 0; }
+.etcl-pipeline > span, .etcl-pipeline > p > span {
+  padding: .35rem .9rem; border-radius: 999px; font-weight: 600; font-size: .8rem;
+  background: var(--md-default-bg-color); box-shadow: var(--etcl-shadow);
+}
+.etcl-pipeline i {
+  width: 34px; height: 2px; position: relative; overflow: hidden;
+  background: color-mix(in srgb, var(--etcl-1) 30%, transparent);
+}
+.etcl-pipeline i::after {
+  content: ""; position: absolute; inset: 0; width: 40%;
+  background: var(--etcl-1); animation: etcl-flow 1.6s linear infinite;
+}
+@keyframes etcl-flow { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
+
+/* ---------- Targetes ---------- */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border-radius: var(--etcl-radius);
+  box-shadow: var(--etcl-shadow);
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 8%, transparent);
+  transition: transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s ease, border-color .25s ease;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--etcl-shadow-hover);
+  border-color: color-mix(in srgb, var(--etcl-1) 45%, transparent);
+}
+.md-typeset .grid.cards .twemoji.lg svg, .md-typeset .grid.cards .lg { color: var(--etcl-1); }
+
+/* ---------- Etiquetes de RA/CA i professor ---------- */
+.md-typeset .ra, .md-typeset .tag {
+  display: inline-block; padding: .08rem .55rem; margin: 0 .2rem .2rem 0; border-radius: 999px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .01em; white-space: nowrap;
+  background: color-mix(in srgb, var(--etcl-2) 12%, transparent); color: var(--etcl-2);
+}
+.md-typeset .tag.p1 { background: color-mix(in srgb, var(--etcl-1) 14%, transparent); color: var(--etcl-1); }
+.md-typeset .tag.p2 { background: color-mix(in srgb, var(--etcl-4) 13%, transparent); color: var(--etcl-4); }
+.md-typeset .tag.festiu { background: color-mix(in srgb, var(--etcl-3) 20%, transparent); color: #b45309; }
+.md-typeset .tag.estat { background: color-mix(in srgb, #64748b 15%, transparent); color: #475569; }
+[data-md-color-scheme="slate"] .md-typeset .tag.estat { color: #cbd5e1; }
+
+/* Capçalera de fitxa de sessió */
+.md-typeset .sessio-meta {
+  display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; align-items: center;
+  padding: .8rem 1rem; margin: 0 0 1.4rem; border-radius: var(--etcl-radius);
+  background: var(--etcl-soft); font-size: .8rem;
+}
+.md-typeset .sessio-meta > p { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; align-items: center; margin: 0; }
+.md-typeset .sessio-meta strong { color: var(--md-default-fg-color--light); font-weight: 600; margin-right: .3rem; }
+
+/* ---------- Calendari en línia temporal ---------- */
+.md-typeset .timeline { position: relative; margin: 1.5rem 0; padding-left: 1.6rem; }
+.md-typeset .timeline::before {
+  content: ""; position: absolute; left: .45rem; top: .3rem; bottom: .3rem; width: 2px;
+  background: linear-gradient(var(--etcl-1), var(--etcl-2));
+}
+.md-typeset .tl-item { position: relative; margin: 0 0 .9rem; padding: .7rem 1rem; border-radius: 12px; background: var(--md-default-bg-color); box-shadow: var(--etcl-shadow); transition: transform .2s ease, box-shadow .2s ease; }
+.md-typeset .tl-item:hover { transform: translateX(4px); box-shadow: var(--etcl-shadow-hover); }
+.md-typeset .tl-item::before {
+  content: ""; position: absolute; left: -1.38rem; top: 1rem; width: .75rem; height: .75rem; border-radius: 50%;
+  background: var(--md-default-bg-color); border: 3px solid var(--etcl-1);
+}
+.md-typeset .tl-item.p2::before { border-color: var(--etcl-4); }
+.md-typeset .tl-item.festiu { background: transparent; box-shadow: none; opacity: .7; padding: .3rem 1rem; }
+.md-typeset .tl-item.festiu::before { border-color: var(--etcl-3); }
+.md-typeset .tl-item > p { margin: 0; }
+.md-typeset .tl-date { font-weight: 700; font-size: .78rem; margin-right: .5rem; }
+.md-typeset .tl-item a { font-weight: 600; }
+.md-typeset .tl-week { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--md-default-fg-color--light); margin: 1.4rem 0 .5rem .1rem; }
+
+/* Filtres del calendari */
+.md-typeset .filtres { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
+.md-typeset .filtres button {
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 15%, transparent); border-radius: 999px;
+  padding: .3rem .9rem; font-size: .75rem; cursor: pointer; background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color); transition: all .2s ease;
+}
+.md-typeset .filtres button.actiu { background: var(--etcl-1); color: #fff; border-color: var(--etcl-1); }
+
+/* Barra de progrés del curs */
+.md-typeset .progres { height: 10px; border-radius: 999px; background: color-mix(in srgb, var(--etcl-1) 12%, transparent); overflow: hidden; margin: .4rem 0 .2rem; }
+.md-typeset .progres > div { height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--etcl-1), var(--etcl-2)); transition: width 1.4s cubic-bezier(.2, .7, .2, 1); }
+
+/* Comptadors de la portada */
+.md-typeset .xifres { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.md-typeset .xifra { text-align: center; padding: 1rem .5rem; border-radius: var(--etcl-radius); box-shadow: var(--etcl-shadow); background: var(--md-default-bg-color); }
+.md-typeset .xifra b { display: block; font-size: 2rem; line-height: 1.1; font-weight: 800; color: var(--etcl-1); font-variant-numeric: tabular-nums; }
+.md-typeset .xifra span { font-size: .75rem; color: var(--md-default-fg-color--light); }
+
+/* Taules i admonitions més suaus */
+.md-typeset table:not([class]) { border-radius: 12px; overflow: hidden; box-shadow: var(--etcl-shadow); border: none; }
+.md-typeset table:not([class]) th { background: var(--etcl-soft); }
+.md-typeset .admonition, .md-typeset details { border-radius: 12px; box-shadow: var(--etcl-shadow); border-width: 0 0 0 4px; }
+
+/* Botons generals */
+.md-typeset .md-button { border-radius: 999px; transition: transform .2s ease, box-shadow .2s ease; }
+.md-typeset .md-button:hover { transform: translateY(-2px); }
+
+/* Diagrames */
+.md-typeset .mermaid { text-align: center; }
+
+@media screen and (max-width: 44.9375em) {
+  .etcl-hero { padding: 2.2rem 1.2rem 2rem; }
+  .etcl-hero h1 { font-size: 1.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}

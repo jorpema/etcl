@@ -1,0 +1,151 @@
+site_name: Extracció, transformació i càrrega de dades
+site_description: "Mòdul 5104 del Curs d'Especialització en Aprenentatge automàtic: gestió de dades i entrenament"
+site_url: https://jorpema.github.io/etcl/
+repo_url: https://github.com/jorpema/etcl
+repo_name: jorpema/etcl
+edit_uri: edit/main/docs/
+copyright: Mòdul 5104 · Curs 2026-27 · Contingut amb llicència CC BY-SA 4.0
+
+theme:
+  name: material
+  language: ca
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/database-arrow-right
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Mode fosc
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Mode clar
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+
+extra_css:
+  - assets/css/etcl.css
+extra_javascript:
+  - assets/js/etcl.js
+
+plugins:
+  - search:
+      lang: es
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: En aquesta pàgina
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glossari.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jorpema/etcl
+    - icon: material/web
+      link: https://alapvi.github.io/sbd/
+      name: Apunts de Sistemes de Big Data (alapvi)
+
+nav:
+  - Inici: index.md
+  - El mòdul:
+      - curs/index.md
+      - Calendari: curs/calendari.md
+      - Resultats d'aprenentatge: curs/ra-ca.md
+      - Entorn de treball: curs/entorn.md
+  - Dilluns · Prof. 1:
+      - p1/index.md
+      - "S01 · Tipus de dades i fonts": p1/s01-tipus-dades.md
+      - "S02 · Gestors i formats": p1/s02-gestors-formats.md
+      - "S03 · Entorns i arquitectures": p1/s03-entorns-arquitectures.md
+      - "S04 · Model multidimensional": p1/s04-model-multidimensional.md
+      - "S05 · Pràctica: OLTP i DDL": p1/s05-practica-ddl.md
+      - "S06 · Pràctica: càrrega del DW": p1/s06-practica-carrega.md
+      - "S07 · Pràctica: SCD1 i DCL": p1/s07-practica-scd-dcl.md
+      - "S08 · Pràctica: càrrega massiva": p1/s08-practica-copy.md
+      - "S09 · Pràctica: benchmark i paral·lelisme": p1/s09-practica-benchmark.md
+      - "S10 · MongoDB I": p1/s10-mongodb-1.md
+      - "S11 · MongoDB II": p1/s11-mongodb-2.md
+      - "S12 · Elasticsearch": p1/s12-elasticsearch.md
+      - "S13 · Seguretat i paral·lelisme NoSQL": p1/s13-nosql-seguretat.md
+      - "S14 · Kibana": p1/s14-kibana.md
+      - "S15 · Power BI": p1/s15-powerbi.md
+      - "S16 · Prova final": p1/s16-prova.md
+  - Dimecres · Prof. 2:
+      - p2/index.md
+      - "D01 · NiFi: arquitectura i instal·lació": p2/d01-nifi-intro.md
+      - "D02 · NiFi: primer flux i FlowFiles": p2/d02-nifi-flowfiles.md
+      - "D03 · NiFi: processors i connexions": p2/d03-nifi-processors.md
+      - "D04 · NiFi: controller services i records": p2/d04-nifi-controllers.md
+      - "D05 · JSON i XML a fons": p2/d05-json-xml.md
+      - "D06 · Escriure i modificar fitxers": p2/d06-fitxers-escriptura.md
+      - "D07 · NiFi i bases de dades": p2/d07-nifi-bd.md
+      - "D08 · Diverses fonts alhora": p2/d08-multifont.md
+      - "D09 · API REST": p2/d09-api-rest.md
+      - "D10 · Confidencialitat": p2/d10-confidencialitat.md
+      - "D11 · HDFS": p2/d11-hdfs.md
+      - "D12 · IoT i sensòrica": p2/d12-iot.md
+      - "D13 · NiFi cap a NoSQL": p2/d13-nifi-nosql.md
+      - "D14 · Web semàntica i SPARQL": p2/d14-sparql.md
+      - "D15 · Spark": p2/d15-spark.md
+      - "D16 · Integració i governança": p2/d16-integracio.md
+      - "D17 · Prova final": p2/d17-prova.md
+  - Pràctiques:
+      - practiques/index.md
+      - "Del model OLTP al model OLAP": practiques/oltp-olap/index.md
+  - Recursos:
+      - Glossari: recursos/glossari.md
+      - Enllaços: recursos/enllacos.md
