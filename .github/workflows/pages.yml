@@ -23,9 +23,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Empaqueta els scripts SQL de la pràctica
-        run: cd docs/practiques/oltp-olap && zip -r compras_sql.zip sql
-      - run: mkdocs build --strict
+      - name: Genera calendari, índexs i scripts (valencià i castellà)
+        run: python tools/genera.py
+      - name: Construeix la versió en valencià
+        run: mkdocs build --strict -f mkdocs.yml
+      - name: Construeix la versió en castellà
+        run: mkdocs build --strict -f mkdocs.es.yml
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

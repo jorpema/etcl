@@ -26,3 +26,7 @@
 *[KPI]: Key Performance Indicator: indicador clau
 *[BI]: Business Intelligence: anàlisi de dades per a la presa de decisions
 *[RGPD]: Reglament General de Protecció de Dades
+*[ACID]: Atomicitat, Consistència, aïllament (Isolation) i Durabilitat: garanties de les transaccions
+*[CAP]: Consistency, Availability, Partition tolerance: en un sistema distribuït només se'n poden garantir dues alhora
+*[NLP]: Natural Language Processing: processament del llenguatge natural
+*[SIG]: Sistema d'Informació Geogràfica

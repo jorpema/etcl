@@ -1,4 +1,5 @@
 site/
 .cache/
 __pycache__/
-docs/practiques/oltp-olap/compras_sql.zip
+docs/*/practiques/oltp-olap/sql/
+docs/*/practiques/oltp-olap/compras_sql.zip

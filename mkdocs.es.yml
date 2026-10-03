@@ -1,0 +1,137 @@
+# ================================================================
+# Web del módulo 5104 · versión en CASTELLANO (/es/)
+# Hereda de mkdocs.yml y solo cambia lo que depende del idioma
+# ================================================================
+INHERIT: mkdocs.yml
+site_name: Extracción, transformación y carga de datos
+site_description: "Módulo 5104 del Curso de Especialización en Aprendizaje automático: gestión de datos y entrenamiento"
+site_url: https://jorpema.github.io/etcl/es/
+edit_uri: edit/main/docs/es/
+docs_dir: docs/es
+site_dir: site/es
+copyright: >-
+  © 2026 Jorge Penalba Mateu y Rafa Vidal Semper ·
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="license noopener">CC BY-SA 4.0</a><br>
+  Material desarrollado con IA con la revisión de Jorge Penalba Mateu y Rafa Vidal Semper.
+  Los contenidos de otros autores se indican en cada página y conservan su licencia.
+
+theme:
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: En esta página
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:
+      auto_append:
+        - includes/glosario.md
+
+extra:
+  alternate:
+    - name: Valencià
+      link: /etcl/
+      lang: ca
+    - name: Castellano
+      link: /etcl/es/
+      lang: es
+  social:
+    - icon: fontawesome/brands/creative-commons
+      link: https://creativecommons.org/licenses/by-sa/4.0/deed.es
+      name: Licencia CC BY-SA 4.0
+    - icon: fontawesome/brands/github
+      link: https://github.com/jorpema/etcl
+    - icon: material/web
+      link: https://alapvi.github.io/sbd/
+      name: Apuntes de Sistemas de Big Data (Alberto Aparicio Vila)
+
+nav:
+  - Inicio: index.md
+  - El módulo:
+      - curs/index.md
+      - Calendario: curs/calendari.md
+      - Resultados de aprendizaje: curs/ra-ca.md
+      - Entorno de trabajo: curs/entorn.md
+      - Licencia y autoría: curs/llicencia.md
+  - Lunes · Jorge:
+      - p1/index.md
+      - "S01 · Tipos de datos y fuentes": p1/s01-tipus-dades.md
+      - "S02 · Gestores y formatos": p1/s02-gestors-formats.md
+      - "S03 · Entornos y arquitecturas": p1/s03-entorns-arquitectures.md
+      - "S04 · Modelo multidimensional": p1/s04-model-multidimensional.md
+      - "S05 · Práctica: OLTP y DDL": p1/s05-practica-ddl.md
+      - "S06 · Práctica: carga del DW": p1/s06-practica-carrega.md
+      - "S07 · Práctica: SCD1 y DCL": p1/s07-practica-scd-dcl.md
+      - "S08 · Práctica: carga masiva": p1/s08-practica-copy.md
+      - "S09 · Práctica: benchmark y paralelismo": p1/s09-practica-benchmark.md
+      - "S10 · MongoDB I": p1/s10-mongodb-1.md
+      - "S11 · MongoDB II": p1/s11-mongodb-2.md
+      - "S12 · Elasticsearch": p1/s12-elasticsearch.md
+      - "S13 · Seguridad y paralelismo NoSQL": p1/s13-nosql-seguretat.md
+      - "S14 · Kibana": p1/s14-kibana.md
+      - "S15 · Power BI": p1/s15-powerbi.md
+      - "S16 · Prueba final": p1/s16-prova.md
+  - Miércoles · Rafa:
+      - p2/index.md
+      - "D01 · NiFi: arquitectura e instalación": p2/d01-nifi-intro.md
+      - "D02 · NiFi: primer flujo y FlowFiles": p2/d02-nifi-flowfiles.md
+      - "D03 · NiFi: processors y conexiones": p2/d03-nifi-processors.md
+      - "D04 · NiFi: controller services y records": p2/d04-nifi-controllers.md
+      - "D05 · JSON y XML a fondo": p2/d05-json-xml.md
+      - "D06 · Escribir y modificar ficheros": p2/d06-fitxers-escriptura.md
+      - "D07 · NiFi y bases de datos": p2/d07-nifi-bd.md
+      - "D08 · Varias fuentes a la vez": p2/d08-multifont.md
+      - "D09 · API REST": p2/d09-api-rest.md
+      - "D10 · Confidencialidad": p2/d10-confidencialitat.md
+      - "D11 · HDFS": p2/d11-hdfs.md
+      - "D12 · IoT y sensórica": p2/d12-iot.md
+      - "D13 · NiFi hacia NoSQL": p2/d13-nifi-nosql.md
+      - "D14 · Web semántica y SPARQL": p2/d14-sparql.md
+      - "D15 · Spark": p2/d15-spark.md
+      - "D16 · Integración y gobernanza": p2/d16-integracio.md
+      - "D17 · Prueba final": p2/d17-prova.md
+  - Prácticas:
+      - practiques/index.md
+      - "Del modelo OLTP al modelo OLAP": practiques/oltp-olap/index.md
+  - Recursos:
+      - Glosario: recursos/glossari.md
+      - Enlaces: recursos/enllacos.md

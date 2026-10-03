@@ -1,13 +1,25 @@
+# ================================================================
+# Web del mòdul 5104 · versió en VALENCIÀ (arrel del lloc)
+# La versió en castellà és mkdocs.es.yml (hereta d'aquest fitxer)
+# ================================================================
 site_name: Extracció, transformació i càrrega de dades
 site_description: "Mòdul 5104 del Curs d'Especialització en Aprenentatge automàtic: gestió de dades i entrenament"
+site_author: Jorge Penalba Mateu i Rafa Vidal Semper
 site_url: https://jorpema.github.io/etcl/
 repo_url: https://github.com/jorpema/etcl
 repo_name: jorpema/etcl
-edit_uri: edit/main/docs/
-copyright: Mòdul 5104 · Curs 2026-27 · Contingut amb llicència CC BY-SA 4.0
+edit_uri: edit/main/docs/ca/
+docs_dir: docs/ca
+site_dir: site
+copyright: >-
+  © 2026 Jorge Penalba Mateu i Rafa Vidal Semper ·
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="license noopener">CC BY-SA 4.0</a><br>
+  Material desenvolupat amb IA amb la revisió de Jorge Penalba Mateu i Rafa Vidal Semper.
+  Els continuts d'altres autors s'indiquen a cada pàgina i conserven la seua llicència.
 
 theme:
   name: material
+  custom_dir: overrides
   language: ca
   font:
     text: Inter
@@ -92,12 +104,22 @@ markdown_extensions:
         - includes/glossari.md
 
 extra:
+  alternate:
+    - name: Valencià
+      link: /etcl/
+      lang: ca
+    - name: Castellano
+      link: /etcl/es/
+      lang: es
   social:
+    - icon: fontawesome/brands/creative-commons
+      link: https://creativecommons.org/licenses/by-sa/4.0/deed.ca
+      name: Llicència CC BY-SA 4.0
     - icon: fontawesome/brands/github
       link: https://github.com/jorpema/etcl
     - icon: material/web
       link: https://alapvi.github.io/sbd/
-      name: Apunts de Sistemes de Big Data (alapvi)
+      name: Apunts de Sistemes de Big Data (Alberto Aparicio Vila)
 
 nav:
   - Inici: index.md
@@ -106,7 +128,8 @@ nav:
       - Calendari: curs/calendari.md
       - Resultats d'aprenentatge: curs/ra-ca.md
       - Entorn de treball: curs/entorn.md
-  - Dilluns · Prof. 1:
+      - Llicència i autoria: curs/llicencia.md
+  - Dilluns · Jorge:
       - p1/index.md
       - "S01 · Tipus de dades i fonts": p1/s01-tipus-dades.md
       - "S02 · Gestors i formats": p1/s02-gestors-formats.md
@@ -124,7 +147,7 @@ nav:
       - "S14 · Kibana": p1/s14-kibana.md
       - "S15 · Power BI": p1/s15-powerbi.md
       - "S16 · Prova final": p1/s16-prova.md
-  - Dimecres · Prof. 2:
+  - Dimecres · Rafa:
       - p2/index.md
       - "D01 · NiFi: arquitectura i instal·lació": p2/d01-nifi-intro.md
       - "D02 · NiFi: primer flux i FlowFiles": p2/d02-nifi-flowfiles.md
