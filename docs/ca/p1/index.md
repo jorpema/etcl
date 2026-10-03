@@ -1,4 +1,6 @@
+
 # Dilluns · Jorge Penalba Mateu
+
 
 Fonts i tipus de dades, el model relacional (amb la pràctica **del model OLTP al model OLAP**), les bases de dades NoSQL (MongoDB i Elasticsearch) i, com a ampliació, la visualització amb Kibana i Power BI.
 
