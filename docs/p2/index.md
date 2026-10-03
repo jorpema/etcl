@@ -1,4 +1,4 @@
-# Dimecres · Prof. 2
+# Dimecres · Rafa
 
 Apache NiFi des de zero, l'extracció i l'escriptura de fitxers, les bases de dades des de NiFi, les API REST, l'IoT, la web semàntica i el Big Data (HDFS i Spark).
 
