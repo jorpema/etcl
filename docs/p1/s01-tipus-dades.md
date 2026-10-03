@@ -21,6 +21,8 @@ Una **dada** és un valor sense context: `38,2`. Quan li afegim context es conve
 
 Un procés ETL treballa amb dades, però el seu objectiu és fer possible que algú (una persona o un model d'aprenentatge automàtic) n'extraga informació i coneixement.
 
+Per què s'ha de realitzar aquest procés? En el context de l'aprenentatge automàtic, la qualitat del model depèn directament de la qualitat de les dades amb què s'entrena. Abans d'aplicar qualsevol algorisme, és essencial fer una anàlisi exhaustiva de les fonts de dades. Aquest procés implica determinar on resideixen les dades, en quin format s'emmagatzemen i de quina naturalesa són. Entendre aquesta tipologia et permet dissenyar estratègies eficients d'extracció, transformació i càrrega (ETL), minimitzant el soroll i maximitzant la informació útil per a l'entrenament.
+
 ## 2. Les quatre preguntes per a classificar una font
 
 Davant de qualsevol font, fes-te sempre aquestes quatre preguntes:
@@ -29,7 +31,7 @@ Davant de qualsevol font, fes-te sempre aquestes quatre preguntes:
 mindmap
   root((Font de dades))
     D'on ve?
-      SGBD
+      SGBD transaccionals (OLTP)
       Fitxers
       API
       IoT / SCADA
@@ -52,7 +54,7 @@ mindmap
 
 ### 2.1 Segons l'origen
 
-| Origen | Exemple | Com hi accedirem en el curs |
+| Origen | Exemple | Com es pot accedir |
 |---|---|---|
 | **Sistema gestor de bases de dades relacional** | El programa de facturació guarda les compres en PostgreSQL | SQL, Python i NiFi amb JDBC |
 | **Base de dades NoSQL** | Catàleg de productes en MongoDB | mongosh, pymongo, NiFi |
